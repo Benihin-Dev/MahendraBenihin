@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import HomePage from "./components/0.HomePage/js/HomePage";
+import SearchComponent from "./components/SearchComponent/js/SearchComponent";
 
 function App() {
+  const [showSearchComponent, setShowSearchComponent] = useState(false);
+
+  const toggleSearchComponent = () => {
+    setShowSearchComponent((prev) => !prev);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative">
+      <HomePage setShowSearchComponent={setShowSearchComponent} />
+
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-[#d4d0cf] z-[60] transition-transform duration-300 ${
+          showSearchComponent ? "scale-100 " : "scale-0 "
+        }`}
+      >
+        <SearchComponent toggleSearchComponent={toggleSearchComponent} />
+      </div>
     </div>
   );
 }

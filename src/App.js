@@ -16,10 +16,13 @@ function App() {
 
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-[#d4d0cf] z-[60] transition-transform duration-300 ${
-          showSearchComponent ? "scale-100 " : "scale-0 "
+          showSearchComponent ? "show" : "hide "
         }`}
       >
-        <SearchComponent toggleSearchComponent={toggleSearchComponent} />
+        <SearchComponent
+          showSearchComponent={showSearchComponent}
+          toggleSearchComponent={toggleSearchComponent}
+        />
       </div>
     </div>
   );

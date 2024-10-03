@@ -1,7 +1,10 @@
 import React from "react";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 
-export default function SearchComponent({ toggleSearchComponent }) {
+export default function SearchComponent({
+  toggleSearchComponent,
+  showSearchComponent,
+}) {
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
@@ -11,10 +14,17 @@ export default function SearchComponent({ toggleSearchComponent }) {
       className=" w-full h-screen custom-cursor px-5 sm:px-10 relative flex items-center justify-center"
     >
       <div onClick={stopPropagation} className=" w-full ">
-        <p className=" w-fit mx-auto cursor-default pb-1 text-center text-5xl md:text-6xl font-romansStyle text-[#282525]">
+        <p
+          className={` ${showSearchComponent ? "fromRight" : "toRight"}
+           w-fit mx-auto cursor-default pb-1 text-center text-5xl md:text-6xl font-romansStyle text-[#282525] `}
+        >
           search
         </p>
-        <div className="    cursor-default  w-full sm:w-8/12   border-[#eae6e4] shadow-sm shadow-white border-8 flex items-center mx-auto">
+        <div
+          className={` ${
+            showSearchComponent ? "fromLeft" : "toLeft"
+          } fromLeft cursor-default  w-full sm:w-8/12   border-[#eae6e4] shadow-sm shadow-white border-8 flex items-center mx-auto `}
+        >
           <input
             type="text"
             className=" w-10/12 bg-white outline-none py-4 px-5"
@@ -25,7 +35,11 @@ export default function SearchComponent({ toggleSearchComponent }) {
           </div>
         </div>
       </div>
-      <p className="   cursor-none text-7xl sm:text-[150px] leading-[100px] absolute bottom-0 left-0 font-romansStyle text-[#bebbba] w-full text-center">
+      <p
+        className={`  ${
+          showSearchComponent ? "fromLeft" : "toLeft"
+        }   cursor-none text-7xl sm:text-[150px] leading-[100px] absolute bottom-0 left-0 font-romansStyle text-[#bebbba] w-full text-center `}
+      >
         search
       </p>
     </div>

@@ -16,213 +16,28 @@ body::-webkit-scrollbar-track {
   background-color: #e4e4e4;
 }
 
-.hamburger-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 35px;
-  height: 25px;
-  cursor: pointer;
+.zoomInOut {
+  animation: zoomInOut 60s infinite linear;
 }
 
-.bar {
-  border-radius: 20px;
-  transition: all 0.5s ease-in-out;
-}
-
-.bar1 {
-  transform-origin: right;
-  margin-left: auto;
-}
-
-.bar2 {
-  transform-origin: left;
-}
-
-.bar3 {
-  transform-origin: left;
-}
-
-.zeroH {
-  height: 0%;
-  transition: all 0.5s ease-in-out;
-}
-
-.fullH {
-  transition: all 0.5s ease-in-out;
-}
-
-.show {
-  animation: show 1s linear;
-}
-
-@keyframes animation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-.paper-plane {
-  font-size: 24px;
-  position: absolute;
-  animation: flyOnCurve 10s infinite linear;
-  offset-path: path("M 50,100 C 100,50 150,150 200,100 S 300,150 350,100");
-  offset-rotate: 0deg;
-}
-
-@keyframes flyOnCurve {
+@keyframes zoomInOut {
   0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
-}
-
-.slide-up {
-  transition: transform 1s ease;
-}
-
-.hrSection::-webkit-scrollbar {
-  display: none;
-}
-
-.hrSection::-webkit-scrollbar-thumb {
-  background-color: #c56b3eb3;
-  border-radius: 0px;
-  cursor: pointer;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.rotate10 {
-  animation: rotate1 2s ease-in-out 1 forwards;
-}
-
-@keyframes rotate1 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-10deg);
-  }
-}
-
-.brandSection::-webkit-scrollbar {
-  display: none;
-}
-
-.brandSection::-webkit-scrollbar-thumb {
-  background-color: #c56b3eb3;
-  border-radius: 0px;
-  cursor: pointer;
-}
-
-div.custom-cursor {
-  cursor: url("../src//components/9.Testimonial/img/cross.png"), auto;
-}
-
-.transition-transform {
-  transition: transform 0.3s ease;
-}
-
-.hide {
-  animation: hide 0.2s forwards ease-in;
-}
-
-.show {
-  animation: show 0.2s forwards ease-in;
-}
-
-.fromLeft {
-  animation: slideInLeft 0.3s forwards ease-in;
-}
-
-.toLeft {
-  animation: slideOutLeft 0.2s forwards ease-in;
-}
-
-.fromRight {
-  animation: slideInRight 0.3s forwards ease-in;
-}
-
-.toRight {
-  animation: slideOutRight 0.2s forwards ease-in;
-}
-
-@keyframes hide {
-  from {
     transform: scale(1);
-    opacity: 1;
-    visibility: visible;
   }
-  to {
-    transform: scale(0);
-    opacity: 0;
-    visibility: hidden;
+  50% {
+    transform: scale(1.7);
   }
-}
-
-@keyframes show {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
+  100% {
     transform: scale(1);
-    opacity: 1;
   }
 }
 
-/* Slide in from the left */
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.fade {
+  opacity: 0;
+  transition: opacity 800ms linear; /* Smooth transition over 500ms */
 }
 
-/* Slide out to the left */
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-/* Slide in from the right */
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Slide out to the right */
-@keyframes slideOutRight {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
+.fadein {
+  opacity: 1; /* Fully visible when the class 'show' is added */
+  transition: opacity 800ms linear; /* Smooth transition over 500ms */
 }

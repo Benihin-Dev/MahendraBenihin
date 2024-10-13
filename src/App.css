@@ -41,3 +41,14 @@ body::-webkit-scrollbar-track {
   opacity: 1; /* Fully visible when the class 'show' is added */
   transition: opacity 800ms linear; /* Smooth transition over 500ms */
 }
+
+.animated-component {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-component.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

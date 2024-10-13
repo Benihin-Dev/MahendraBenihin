@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import FinalLTP from "./FinalLTP";
 
 export default function LuxuriousTimePieces({ topSectionHeight }) {
@@ -6,6 +7,16 @@ export default function LuxuriousTimePieces({ topSectionHeight }) {
   const [distanceFromTop, setDistanceFromTop] = useState(0);
   const [sizeForWidth, setSizeForWidth] = useState(0);
   const [isAtTop, setIsAtTop] = useState(false);
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.05,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,11 +50,21 @@ export default function LuxuriousTimePieces({ topSectionHeight }) {
 
   return (
     <div ref={collectionRef} className=" relative bg-black w-full  text-white ">
-      <div className=" w-full h-screen py-10">
-        <p className=" font-dosis w-full text-center font-bold text-3xl md:text-4xl lg:text-5xl">
+      <div className={` w-full h-screen py-10 `}>
+        <p
+          ref={firstRef}
+          className={`animated-component ${
+            firstInView ? "is-visible" : ""
+          } font-dosis w-full text-center font-bold text-3xl md:text-4xl lg:text-5xl`}
+        >
           Luxurious Time Pieces
         </p>
-        <p className="  mt-5 font-dosis w-full text-center">
+        <p
+          ref={secondRef}
+          className={`animated-component ${
+            secondInView ? "is-visible" : ""
+          } mt-5 font-dosis w-full text-center`}
+        >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
           atque qui, aliquam <br /> ab, id sequi assumenda, veritatis
           praesentium nobis non voluptate

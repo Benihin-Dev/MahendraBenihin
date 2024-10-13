@@ -10,6 +10,7 @@ import FAQ from "../../9.FAQ/js/FAQ";
 import Footer from "../../10.Footer/js/Footer";
 import LuxuriousTimePieces from "../../3.LuxuriousTimePieces/js/LuxuriousTimePieces";
 import Collections from "../../5.Collections/js/Collections";
+import Support from "../../11.Support/js/Support";
 
 export default function HomePage() {
   const topSectionRef = useRef(null);
@@ -62,6 +63,7 @@ export default function HomePage() {
       <AboutUs />
       <FAQ />
       <Footer />
+      <Support />
     </div>
   );
 }

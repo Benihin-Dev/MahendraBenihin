@@ -47,7 +47,7 @@ export default function Hero() {
                 key={index}
                 className={`${
                   currentBannerIndex === index ? "block" : "hidden"
-                } text-3xl md:text-5xl  sm:pb-5    font-bold  font-josefin text-white mx-auto w-10/12 md:w-8/12 lg:w-7/12  `}
+                } text-2xl md:text-5xl  sm:pb-5    font-bold  font-josefin text-white mx-auto w-10/12 md:w-8/12 lg:w-7/12  `}
               >
                 {data.title}
               </p>

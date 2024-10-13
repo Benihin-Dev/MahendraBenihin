@@ -3,10 +3,27 @@ import { SlPlane } from "react-icons/sl";
 import { SlGlobeAlt } from "react-icons/sl";
 import { LuPlus } from "react-icons/lu";
 import { LuMinus } from "react-icons/lu";
+import { useInView } from "react-intersection-observer";
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(null); // Store the index of the open FAQ
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+  const { ref: thirdRef, inView: thirdInView } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
+  const { ref: fourthRef, inView: fourthInView } = useInView({
+    threshold: 0.35,
+    triggerOnce: true,
+  });
 
+  const [activeIndex, setActiveIndex] = useState(null); // Store the index of the open FAQ
   const toggleFAQ = (index) => {
     if (activeIndex === index) {
       setActiveIndex(null); // If the same question is clicked, close it
@@ -42,8 +59,11 @@ export default function FAQ() {
   return (
     <div className="w-full relative bg-[#000000a8] text-white ">
       <div className="w-full py-32 sm:py-40 px-5 sm:px-0 sm:w-11/12 md:w-10/12 gap-5 lg:gap-10 mx-auto sm:flex items-center justify-center">
-        <div className="sm:w-1/2 w-full space-y-12">
-          <div>
+        <div className={` sm:w-1/2 w-full space-y-12 `}>
+          <div
+            ref={firstRef}
+            className={`animated-component ${firstInView ? "is-visible" : ""} `}
+          >
             <div className="w-full flex items-center justify-center">
               <SlPlane className=" size-12 sm:size-[60px]" />
             </div>
@@ -51,7 +71,12 @@ export default function FAQ() {
               Free Shipping
             </p>
           </div>
-          <div>
+          <div
+            ref={secondRef}
+            className={`animated-component ${
+              secondInView ? "is-visible" : ""
+            } `}
+          >
             <div className="w-full flex items-center justify-center">
               <SlGlobeAlt
                 style={{ transform: "scaleX(-1)" }}
@@ -64,10 +89,20 @@ export default function FAQ() {
           </div>
         </div>
         <div className="sm:w-1/2 w-full mt-10 sm:mt-0">
-          <p className="w-full text-center text-3xl text-white font-dosis font-semibold">
+          <p
+            ref={thirdRef}
+            className={`animated-component ${
+              thirdInView ? "is-visible" : ""
+            } w-full text-center text-3xl text-white font-dosis font-semibold `}
+          >
             F.A.Q
           </p>
-          <div className="w-full space-y-2 mt-6 sm:mt-10">
+          <div
+            ref={fourthRef}
+            className={`animated-component ${
+              fourthInView ? "is-visible" : ""
+            } w-full space-y-2 mt-6 sm:mt-10 `}
+          >
             {fAQandAnswers.map((item, index) => (
               <div key={index}>
                 <div
@@ -88,7 +123,9 @@ export default function FAQ() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="pl-3 pr-2 py-2 text-sm  text-justify">{item.answer}</p>
+                  <p className="pl-3 pr-2 py-2 text-sm  text-justify">
+                    {item.answer}
+                  </p>
                 </div>
               </div>
             ))}

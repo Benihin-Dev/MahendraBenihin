@@ -99,7 +99,7 @@ export default function Header() {
                 <div
                   className={` ${
                     link.subLinks.state ? "block" : "hidden"
-                  } bg-white absolute top-[110%] w-[250%] -left-3    `}
+                  } bg-white absolute z-20 top-[110%] w-[250%] -left-3    `}
                 >
                   {link.subLinks.links.map((sLink, i) => (
                     <p
@@ -121,8 +121,13 @@ export default function Header() {
         <HiOutlineShoppingCart className=" size-6 hover:text-[#ddac55] duration-300 cursor-pointer" />
       </div>
       {navLinkStateForSmScreen && (
-        <div className=" md:hidden absolute top-[100%] left-0  w-full">
-          <div className=" w-11/12 sm:w-8/12 mx-auto">
+        <div
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
+          className="md:hidden absolute top-[100%] left-0  z-20 w-full"
+        >
+          <div className=" w-11/12 sm:w-8/12 mx-auto bg-white">
             {headerLinks.map((link, index) => (
               <div
                 key={index}

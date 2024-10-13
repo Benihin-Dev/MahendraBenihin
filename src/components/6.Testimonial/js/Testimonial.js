@@ -1,5 +1,6 @@
 import React from "react";
 import SliderForTestimonial from "./SliderForTestimonial";
+import { useInView } from "react-intersection-observer";
 
 export default function Testimonial() {
   const data = [
@@ -22,12 +23,33 @@ export default function Testimonial() {
         "This watch has made history as the first timepiece worn on the moon during the Apollo missions, solidiW'ing its reputation as a true achiever's timepiece. Furthermore, its unparalleled durability ensures that this watch can withstand the rigors of any demanding",
     },
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
     <div className=" w-full relative px-5 sm:px-10 bg-black py-16">
-      <p className=" w-full text-center text-5xl text-white font-dosis font-semibold">
+      <p
+        ref={firstRef}
+        className={`animated-component ${
+          firstInView ? "is-visible" : ""
+        } w-full text-center text-5xl text-white font-dosis font-semibold `}
+      >
         Our Customers Says
       </p>
-      <div className=" w-full sm:w-7/12 mx-auto mt-20">
+      <div
+        ref={secondRef}
+        className={`animated-component ${
+          secondInView ? "is-visible" : ""
+        } w-full sm:w-7/12 mx-auto mt-20 `}
+      >
         <SliderForTestimonial data={data} />
       </div>
     </div>

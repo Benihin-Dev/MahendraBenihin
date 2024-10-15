@@ -133,9 +133,9 @@ export default function LuxuriousTimePieces({ topSectionHeight }) {
         {(distanceFromTop / window.innerHeight) * 100 >= 100 ? (
           ""
         ) : (
-          <div className=" w-full h-full absolute bg-black flex items-center justify-center top-0 left-0  ">
+          <div className=" w-full h-full absolute bg-black flex items-end justify-center  p-5 sm:p-10 lg:p-16 top-0 left-0  ">
             <p
-              className={`  w-11/12 font-semibold sm:w-9/12 font-jost text-white z-20 text-lg mx-auto `}
+              className={`  w-11/12 sm:w-7/12 px-10 font-jost text-white z-20  text-lg sm:text-3xl mr-auto `}
             >
               Businessmen with a taste for adventure and an appetite for
               success, the Omega Speedmaster Professional is the perfect choice.

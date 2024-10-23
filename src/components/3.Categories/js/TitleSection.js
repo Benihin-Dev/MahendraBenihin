@@ -10,7 +10,7 @@ export default function TitleSection() {
       <p className=" w-11/12  md:w-8/12 cursor-default text-center mx-auto font-medium leading-10 text-4xl py-5">
         Worldwide Fashion Collection
       </p>
-      <div className=" w-20 border-b-2 mt-3 border-black mx-auto"></div>
+      <div className=" w-20 border-b-2 mb-3  border-black mx-auto"></div>
       <CustomBtn1 text={" Explore All"} />
     </div>
   );

@@ -14,10 +14,12 @@ import Footer from "../../12.Footer/js/Footer";
 import SlideUpBtn from "../../MiniComponents/js/SlideUpBtn";
 import SlideUpProductBanner from "../../13.SlideUpProductBanner/js/SlideUpProductBanner";
 import WelcomeBanner from "../../MiniComponents/js/WelcomeBanner";
+import TitleText from "../../MiniComponents/js/TitleText";
 
 export default function HomePage() {
   const [showSlideUpBtn, setShowSlideUpBtn] = useState(false);
   const topSectionRef = useRef(null);
+  const [showTitleText, setShowTitleText] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,6 +43,14 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTitleText(false); // Hide TitleText after 3 seconds
+    }, 4200);
+
+    return () => clearTimeout(timer); // Cleanup timeout on unmount
+  }, []);
+
   return (
     <div className="  relative font-inter overflow-hidden">
       <div ref={topSectionRef} name="top-section">
@@ -60,6 +70,7 @@ export default function HomePage() {
       {showSlideUpBtn && <SlideUpBtn />}
       <SlideUpProductBanner />
       <WelcomeBanner />
+      {showTitleText && <TitleText />}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import CustomBtn from "../../MiniComponents/js/CustomBtn";
 import CustomBtn1 from "../../MiniComponents/js/CustomBtn1";
+import { useInView } from "react-intersection-observer";
 
 export default function Zaccaria() {
   const data = [
@@ -20,10 +21,24 @@ export default function Zaccaria() {
       text: "Lectus nulla at volutpat diam ut venenatis tellus in metus.",
     },
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.9,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <div className=" w-full pt-10 border-b  pb-20 relative ">
       <div className="  w-full px-5 sm:px-0 sm:w-11/12 mx-auto">
-        <div className="">
+        <div
+          ref={firstRef}
+          className={`animated-component  ${firstInView ? "is-visible " : ""} `}
+        >
           <p className=" text-sm text-center text-gray-400 md:text-[#5a5a5a] w-full font-medium tracking-widest">
             COLLECTIONS OF
           </p>
@@ -32,7 +47,12 @@ export default function Zaccaria() {
           </p>
           <p className=" border-b-[3px] mx-auto border-black w-20 my-5"></p>
         </div>
-        <div className=" mt-16 md:grid-cols-3 grid-cols-1 grid gap-10 w-full">
+        <div
+          ref={secondRef}
+          className={`animated-component  ${
+            secondInView ? "is-visible" : ""
+          } mt-16 md:grid-cols-3 grid-cols-1 grid gap-10 w-full `}
+        >
           {data.map((item, index) => (
             <div key={index} className=" w-full group cursor-pointer">
               <div className=" w-full overflow-hidden">

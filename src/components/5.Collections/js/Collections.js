@@ -1,6 +1,7 @@
 import React from "react";
 import CustomBtn2 from "../../MiniComponents/js/CustomBtn2";
 import ProductTemplet from "./ProductTemplet";
+import { useInView } from "react-intersection-observer";
 
 export default function Collections() {
   const collectionDetails = [
@@ -105,10 +106,26 @@ export default function Collections() {
       ],
     },
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <div className=" py-10  w-full relative ">
       <div className=" w-full px-5 sm:px-0 sm:w-11/12 mx-auto">
-        <div className=" w-full md:flex items-end justify-between ">
+        <div
+          ref={firstRef}
+          className={`animated-component ${
+            firstInView ? "is-visible" : ""
+          } w-full md:flex items-end justify-between `}
+        >
           <div>
             <p className=" text-sm text-gray-400 md:text-[#5a5a5a] w-full font-medium tracking-widest">
               POPULAR PRODUCTS OF THE WEEK
@@ -120,7 +137,12 @@ export default function Collections() {
           </div>
           <CustomBtn2 text={"view all"} />
         </div>
-        <div className=" w-full pt-6 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div
+          ref={secondRef}
+          className={`animated-component ${
+            secondInView ? "is-visible" : ""
+          }  w-full pt-6 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 `}
+        >
           {collectionDetails.map((item, index) => (
             <ProductTemplet data={item} key={index} />
           ))}

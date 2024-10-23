@@ -1,6 +1,7 @@
 import React from "react";
 import CustomBtn2 from "../../MiniComponents/js/CustomBtn2";
 import SliderForFP from "./SliderForFP";
+import { useInView } from "react-intersection-observer";
 
 export default function FeaturedProducts() {
   const productDetails = [
@@ -78,11 +79,31 @@ export default function FeaturedProducts() {
       type: "Classic Style",
     },
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.7,
+    triggerOnce: true,
+  });
+
+  const { ref: thirdRef, inView: thirdInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
   return (
     <div className=" py-10 w-full relative  ">
       <div className=" w-full px-5 sm:px-0 sm:w-11/12 mx-auto">
         <div className=" w-full md:flex gap-8 items-start justify-between ">
-          <div className=" w-full hidden md:block md:w-[40%] relative">
+          <div
+            ref={firstRef}
+            className={`animated-componentfromLeft ${
+              firstInView ? "is-visiblefromLeft" : ""
+            } w-full hidden md:block md:w-[40%] relative `}
+          >
             <img
               src="https://wdtkoka.wpengine.com/wp-content/uploads/2023/12/hotspot.jpg"
               alt=""
@@ -111,7 +132,12 @@ export default function FeaturedProducts() {
             ))}
           </div>
           <div className=" md:w-[60%]  mt-5 md:mt-0  w-full">
-            <div className=" w-full items-end justify-between md:flex">
+            <div
+              ref={secondRef}
+              className={`animated-component  ${
+                secondInView ? "is-visible " : ""
+              } w-full items-end justify-between md:flex `}
+            >
               <div className="">
                 <p className=" text-sm text-gray-400 md:text-[#5a5a5a] w-full font-medium tracking-widest">
                   Explore Customer's Favourite
@@ -125,7 +151,12 @@ export default function FeaturedProducts() {
                 <CustomBtn2 text={"view all"} />
               </div>
             </div>
-            <div className=" ">
+            <div
+              ref={thirdRef}
+              className={`animated-componentfromRight ${
+                thirdInView ? "is-visiblefromRight" : ""
+              } `}
+            >
               <SliderForFP data={productDetails} />
             </div>
           </div>

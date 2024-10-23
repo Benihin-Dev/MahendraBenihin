@@ -36,7 +36,7 @@ export default function SliderForTestimonials({ data }) {
 
   return (
     <div className={` w-full h-full  `}>
-      <div className=" absolute  top-20 rounded-full border-black border hover:bg-black hover:text-white duration-300 right-24  size-10 flex items-center justify-center z-10 cursor-pointer   ">
+      <div className=" absolute  -top-20 rounded-full border-black border hover:bg-black hover:text-white duration-300 right-24  size-10 flex items-center justify-center z-10 cursor-pointer   ">
         <div className=" cursor-pointer">
           <div className="  duration-200 " onClick={handlePrevSlide}>
             <IoIosArrowBack className="size-6 duration-200 " />
@@ -87,7 +87,7 @@ export default function SliderForTestimonials({ data }) {
         ))}
       </Slider>
 
-      <div className=" absolute  top-20 rounded-full border-black border hover:bg-black hover:text-white duration-300 right-10  size-10 flex items-center justify-center z-10 cursor-pointer   ">
+      <div className=" absolute  -top-20 rounded-full border-black border hover:bg-black hover:text-white duration-300 right-10  size-10 flex items-center justify-center z-10 cursor-pointer   ">
         <div className=" cursor-pointer">
           <div className="  duration-200 " onClick={handleNextSlide}>
             <IoIosArrowBack className="size-6 rotate-180 duration-200 " />

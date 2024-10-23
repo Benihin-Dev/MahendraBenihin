@@ -4,7 +4,7 @@ import CloseBtn from "./CloseBtn";
 
 export default function SearchComponent({ setSearchComponentState }) {
   return (
-    <div className=" w-full fixed flex items-center justify-center top-0 left-0  h-screen bg-[#f0f0f0]">
+    <div className=" w-full z-50 fixed flex items-center justify-center top-0 left-0  h-screen bg-[#f0f0f0]">
       <div className=" w-10/12 sm:w-7/12 lg:w-5/12 border hover:border-[#d69393] duration-300 border-gray-300 shadow-sm rounded-sm overflow-hidden flex items-center justify-center">
         <input
           type="text"

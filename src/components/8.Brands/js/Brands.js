@@ -7,6 +7,7 @@ import brandImg5 from "../img/b5.png";
 import brandImg6 from "../img/b6.png";
 import brandImg7 from "../img/b7.png";
 import SliderForBrand from "./SliderForBrand";
+import { useInView } from "react-intersection-observer";
 
 export default function Brands() {
   const data = [
@@ -18,8 +19,18 @@ export default function Brands() {
     brandImg6,
     brandImg7,
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
   return (
-    <div className=" w-full relative py-10 ">
+    <div
+      ref={firstRef}
+      className={`animated-component ${
+        firstInView ? "is-visible " : ""
+      } w-full relative py-10 `}
+    >
       <div className=" w-full   border-y">
         <SliderForBrand data={data} />
       </div>

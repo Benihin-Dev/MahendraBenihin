@@ -1,5 +1,6 @@
 import React from "react";
 import SliderForTestimonials from "./SliderForTestimonials";
+import { useInView } from "react-intersection-observer";
 
 export default function Testimonials() {
   const details = [
@@ -40,10 +41,25 @@ export default function Testimonials() {
       img: "https://wdtkoka.wpengine.com/wp-content/uploads/2024/01/Koka-testimonial-img-01.jpg",
     },
   ];
+
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full py-16 border-b  relative">
-      <div className=" w-full sm:w-11/12 mx-auto">
-        <div className="px-5 sm:px-0 ">
+      <div className=" w-full sm:w-11/12 mx-auto relative">
+        <div
+          ref={firstRef}
+          className={`animated-component  ${
+            firstInView ? "is-visible" : ""
+          } px-5 sm:px-0 `}
+        >
           <p className=" text-sm   text-gray-400 md:text-[#5a5a5a] w-full font-medium tracking-widest">
             Customer Reviews
           </p>
@@ -52,7 +68,12 @@ export default function Testimonials() {
           </p>
           <p className=" border-b-[3px] border-black w-20 my-5"></p>
         </div>
-        <div className=" w-full  pt-3 sm:pt-10 ">
+        <div
+          ref={secondRef}
+          className={`animated-component  ${
+            secondInView ? "is-visible" : ""
+          } w-full  pt-3 sm:pt-10 `}
+        >
           <SliderForTestimonials data={details} />
         </div>
       </div>

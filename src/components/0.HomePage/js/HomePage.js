@@ -12,6 +12,8 @@ import Testimonials from "../../10.Testimonials/js/Testimonials";
 import FollowUs from "../../11.FollowUs/js/FollowUs";
 import Footer from "../../12.Footer/js/Footer";
 import SlideUpBtn from "../../MiniComponents/js/SlideUpBtn";
+import SlideUpProductBanner from "../../13.SlideUpProductBanner/js/SlideUpProductBanner";
+import WelcomeBanner from "../../MiniComponents/js/WelcomeBanner";
 
 export default function HomePage() {
   const [showSlideUpBtn, setShowSlideUpBtn] = useState(false);
@@ -40,7 +42,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="  relative font-inter">
+    <div className="  relative font-inter overflow-hidden">
       <div ref={topSectionRef} name="top-section">
         <Header />
       </div>
@@ -56,6 +58,8 @@ export default function HomePage() {
       <FollowUs />
       <Footer />
       {showSlideUpBtn && <SlideUpBtn />}
+      <SlideUpProductBanner />
+      <WelcomeBanner />
     </div>
   );
 }

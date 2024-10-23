@@ -1,73 +1,78 @@
 import React, { useState } from "react";
 import SliderForHero from "./SliderForHero";
+import Banner1 from "./Banners/Banner1";
+import Banner2 from "./Banners/Banner2";
+import Banner3 from "./Banners/Banner3";
+import CustomBtn2 from "../../MiniComponents/js/CustomBtn2";
+import { useInView } from "react-intersection-observer";
 
 export default function Hero() {
-  const dataForHeroSlider = [
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const data = [
     {
-      img: "https://centrio.brickthemes.com/wp-content/uploads/2023/11/business-man-s-hand-with-watch.jpg",
-      title: "Precision Movement",
-      desc: "The movement, or the mechanism that powers the watch, is a critical feature. Luxury watches often boast mechanical movements that are hand-assembled and meticulously calibrated.",
+      img: "https://wdtkoka.wpengine.com/wp-content/uploads/2024/01/home-1-slider-image-1.jpg",
+      title: "Enchanting Fashion",
+      desc: "Est sit amet facilisis magna etiam tempor orci eu lobortis. In tellusinteger feugiat scelerisque varius. Nunc congue nisi vitae suscipit tellus mauris. Diam maecenas sed enim ut.",
+      miniText: "NEW YEAR SALE 2024",
     },
     {
-      img: "https://centrio.brickthemes.com/wp-content/uploads/2023/11/narek-hakobyan.jpg",
-      title: "Exceptional Craftsman",
-      desc: "Use of high-quality materials such as sapphire crystal for the watch face precious metals and fine leather or metal alloys for straps. The attention to detail in the watch's construction and finishing is also a critical aspect.",
+      img: "https://wdtkoka.wpengine.com/wp-content/uploads/2024/01/home-1-slider-image-2.jpg",
+      title: "Exclusive Collections",
+      desc: "Est sit amet facilisis magna etiam tempor orci eu lobortis. In tellusinteger feugiat scelerisque varius. Nunc congue nisi vitae suscipit tellus mauris. Diam maecenas sed enim ut.",
+      miniText: "UP TO 50% OFF",
     },
     {
-      img: "https://centrio.brickthemes.com/wp-content/uploads/2023/11/a-man-in-sunglasses-smoking-a-cigar.jpg",
-      title: "Heritage and Exclusivity",
-      desc: "The brand's history and reputation can play a significant role in defining a watch as luxury. Limited edition models or those with a historical significance often add to this allure.",
+      img: "https://wdtkoka.wpengine.com/wp-content/uploads/2023/12/home-1-slider-image-1.jpg",
+      title: "Novi's Collections",
+      desc: "Est sit amet facilisis magna etiam tempor orci eu lobortis. In tellusinteger feugiat scelerisque varius. Nunc congue nisi vitae suscipit tellus mauris. Diam maecenas sed enim ut.",
+      miniText: "DAILY WEAR UP TO 20%",
     },
   ];
-  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const { ref: firstRef, inView: firstInView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
   return (
-    <div className=" w-full  p-3 sm:p-6 md:p-8 lg:p-10 bg-black  aspect-video">
-      <div
-        onClick={() => {
-          console.log(currentBannerIndex);
-        }}
-        className=" relative w-full h-full rounded-3xl overflow-hidden"
-      >
-        <div className="absolute top-0 left-0 w-full h-full">
-          {dataForHeroSlider.map((data, index) => (
-            <img
-              src={data.img}
-              key={index}
-              alt=""
-              className={` absolute top-0 left-0 h-full object-center object-cover zoomInOut w-full ${
-                currentBannerIndex === index ? "fadein" : "fade"
-              } `}
-            />
-          ))}
+    <div className=" w-full h-full mb-20 font-inter  relative">
+      <div className=" w-full h-full">
+        {currentBannerIndex === 0 ? (
+          <Banner1 info={data[0]} />
+        ) : currentBannerIndex === 1 ? (
+          <Banner2 info={data[1]} />
+        ) : (
+          <Banner3 info={data[2]} />
+        )}
+      </div>
+      {data.map((item, index) => (
+        <div
+          key={index}
+          ref={firstRef}
+          className={`animated-component ${firstInView ? "is-visible" : ""} ${
+            currentBannerIndex === index ? "fadein" : "fade"
+          } absolute -z-10 top-0 left-0 w-full h-full overflow-hidden `}
+        >
+          <img
+            src={item.img}
+            alt=""
+            className={` ${
+              index === 1 ? " object-right " : "object-left-bottom"
+            } w-full h-full duration-200 md:scale-125 object-cover `}
+          />
         </div>
-        <div className=" absolute top-0 flex items-end justify-start sm:pb-20 bg-transparent  w-full h-full left-0  ">
-          <div className=" w-full">
-            {dataForHeroSlider.map((data, index) => (
-              <p
-                key={index}
-                className={`${
-                  currentBannerIndex === index ? "block" : "hidden"
-                } text-2xl md:text-5xl  sm:pb-5    font-bold  font-josefin text-white mx-auto w-10/12 md:w-8/12 lg:w-7/12  `}
-              >
-                {data.title}
-              </p>
-            ))}
-            <p className="sm:pb-20 invisible font-jost text-white mx-auto w-10/12 md:w-8/12 lg:w-7/12 text-sm sm:text-base">
-              Use of high-quality materials such as sapphire crystal for the
-              watch face precious metals and fine leather or metal alloys for
-              straps. The attention to detail in the watch's construction and
-              finishing is also a critical aspect.
-            </p>
-          </div>
-        </div>
-        <div className=" absolute top-0 flex items-end justify-start sm:pb-20  w-full h-full left-0  ">
-          <div className=" w-full">
-            <SliderForHero
-              data={dataForHeroSlider}
-              setCurrentBannerIndex={setCurrentBannerIndex}
-            />
-          </div>
-        </div>
+      ))}
+      <div className=" absolute top-0 bottom-0 left-0 w-full h-full">
+        <SliderForHero
+          data={data}
+          setCurrentBannerIndex={setCurrentBannerIndex}
+          info={data[0]}
+        />
+      </div>
+      <div className=" absolute top-[88%] z-30 tracking-[0.25rem] lg:w-1/2 text-xs left-5 text-gray-700 md:text-black md:left-10 flex items-center justify-start gap-1">
+        <p className=" cursor-pointer hover:text-[#b56868] duration-300  uppercase">
+          Re - Fabric Court
+        </p>
+        <p className=" cursor-default px-3">|</p>
+        <CustomBtn2 text={"show all"} />
       </div>
     </div>
   );

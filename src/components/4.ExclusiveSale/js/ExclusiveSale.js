@@ -13,17 +13,17 @@ export default function ExclusiveSale() {
   });
 
   const { ref: secondRef, inView: secondInView } = useInView({
-    threshold: 1,
-    triggerOnce: true,
-  });
-
-  const { ref: thirdRef, inView: thirdInView } = useInView({
     threshold: 0.8,
     triggerOnce: true,
   });
 
+  const { ref: thirdRef, inView: thirdInView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   const { ref: fourthRef, inView: fourthInView } = useInView({
-    threshold: 1,
+    threshold: 0.8,
     triggerOnce: true,
   });
 
@@ -69,7 +69,7 @@ export default function ExclusiveSale() {
             ref={secondRef}
             className={`animated-componentfromLeft ${
               secondInView ? "is-visiblefromLeft" : ""
-            }  `}
+            } w-full  `}
           >
             <p className=" text-sm text-gray-400 md:text-[#5a5a5a] w-full text-center    font-medium tracking-widest">
               EXCLUSIVE SALES WITH 50% OFF

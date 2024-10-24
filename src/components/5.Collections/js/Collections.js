@@ -112,11 +112,6 @@ export default function Collections() {
     triggerOnce: true,
   });
 
-  const { ref: secondRef, inView: secondInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
   return (
     <div className=" py-10  w-full relative ">
       <div className=" w-full px-5 sm:px-0 sm:w-11/12 mx-auto">
@@ -138,10 +133,7 @@ export default function Collections() {
           <CustomBtn2 text={"view all"} />
         </div>
         <div
-          ref={secondRef}
-          className={`animated-component ${
-            secondInView ? "is-visible" : ""
-          }  w-full pt-6 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 `}
+          className={`   w-full pt-6 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 `}
         >
           {collectionDetails.map((item, index) => (
             <ProductTemplet data={item} key={index} />

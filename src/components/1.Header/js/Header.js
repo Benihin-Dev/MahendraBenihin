@@ -10,10 +10,10 @@ import PageLinks from "./SubNavLinkComponents/PageLinks";
 
 export default function Header() {
   const headerItems = [
-    {
-      name: "Home",
-      innerItem: <HomeLinks />,
-    },
+    // {
+    //   name: "Home",
+    //   innerItem: <HomeLinks />,
+    // },
     {
       name: "shop",
       innerItem: <ShopLinks />,

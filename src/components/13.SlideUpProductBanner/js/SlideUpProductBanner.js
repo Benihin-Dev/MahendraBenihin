@@ -35,7 +35,7 @@ export default function SlideUpProductBanner() {
   useEffect(() => {
     const slideUpTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 1500); // Small delay to trigger the initial slide-up
+    }, 3000); // Small delay to trigger the initial slide-up
 
     const bannerTimer = setInterval(() => {
       setIsVisible(false); // Start sliding down
@@ -43,7 +43,7 @@ export default function SlideUpProductBanner() {
         // Change to the next banner after sliding down
         setActiveIndex((prevIndex) => (prevIndex + 1) % data.length);
         setIsVisible(true); // Slide up the next banner
-      }, 4000); // Wait 10 seconds after sliding down before sliding up the next banner
+      }, 8000); // Wait 10 seconds after sliding down before sliding up the next banner
     }, 7000); // Each banner stays up for 40 seconds, plus the 10-second interval
 
     return () => {

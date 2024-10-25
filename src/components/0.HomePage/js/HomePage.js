@@ -46,7 +46,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTitleText(false); // Hide TitleText after 3 seconds
-    }, 4200);
+    }, 3000);
 
     return () => clearTimeout(timer); // Cleanup timeout on unmount
   }, []);

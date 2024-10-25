@@ -9,10 +9,12 @@ export default function Banner2({ info }) {
           <p className=" text-sm text-gray-400 md:text-[#5a5a5a] w-full text-start    font-medium tracking-widest">
             {info.miniText}
           </p>
-          <p className=" text-start   w-full   text-[#000000]  my-4 font-semibold text-4xl">
+          <p className=" text-start   w-full   text-[#000000]  my-4 font-semibold text-3xl pb-1 sm:pb-0 sm:text-4xl">
             {info.title}
           </p>
-          <p className="  text-gray-400 md:text-[#5a5a5a] w-full text-start  ">{info.desc}</p>
+          <p className="  text-gray-400 md:text-[#5a5a5a] w-full text-start  ">
+            {info.desc}
+          </p>
         </div>
         <div className=" overflow-hidden w-full my-4 flex items-center md:justify-start">
           <ShopNowBtn />

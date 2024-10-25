@@ -4,7 +4,6 @@ import Banner1 from "./Banners/Banner1";
 import Banner2 from "./Banners/Banner2";
 import Banner3 from "./Banners/Banner3";
 import CustomBtn2 from "../../MiniComponents/js/CustomBtn2";
-import { useInView } from "react-intersection-observer";
 
 export default function Hero() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
@@ -28,10 +27,7 @@ export default function Hero() {
       miniText: "DAILY WEAR UP TO 20%",
     },
   ];
-  const { ref: firstRef, inView: firstInView } = useInView({
-    threshold: 0.4,
-    triggerOnce: true,
-  });
+
   return (
     <div className=" w-full h-full mb-20 font-inter  relative">
       <div className=" w-full h-full">
@@ -46,8 +42,7 @@ export default function Hero() {
       {data.map((item, index) => (
         <div
           key={index}
-          ref={firstRef}
-          className={`animated-component ${firstInView ? "is-visible" : ""} ${
+          className={` ${
             currentBannerIndex === index ? "fadein" : "fade"
           } absolute -z-10 top-0 left-0 w-full h-full overflow-hidden `}
         >

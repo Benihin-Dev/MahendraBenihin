@@ -15,10 +15,11 @@ export default function BottomHeaderSection({
   const [searchComponentState, setSearchComponentState] = useState(false);
   return (
     <div className=" w-full bg-white border-b relative">
-      <div className="  w-11/12 mx-auto py-5 flex items-center justify-between gap-10 ">
+      <div className="  w-11/12 mx-auto py-1 flex items-center justify-between gap-10 ">
         <img
-          src="https://wdtkoka.wpengine.com/wp-content/themes/koka/assets/images/logo.svg"
+          src="https://fashionjunkyy.com/cdn/shop/files/imgpsh_fullsize_anim_28_1500x.png?v=1697070678"
           alt=""
+          className=" h-16 object-contain"
         />
         <ul className="items-center gap-6 hidden lg:flex">
           {headerItems.map((item, index) => (

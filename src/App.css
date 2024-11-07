@@ -16,18 +16,23 @@ body::-webkit-scrollbar-track {
   background-color: #e4e4e4;
 }
 
+*::selection {
+  background-color: #bb9d7bd4; /* Background color for selected text */
+  color: #ffffff; /* Text color for selected text */
+}
+
 .customsScrollbar::-webkit-scrollbar {
   width: 5px;
 }
 
 .customsScrollbar::-webkit-scrollbar-thumb {
-  background-color: #c2c2c2;
+  background-color: #c2c2c27f;
   border-radius: 0px;
   cursor: pointer;
 }
 
 .customsScrollbar::-webkit-scrollbar-track {
-  background-color: #e4e4e4;
+  background-color: #e4e4e478;
 }
 
 .zoomInOut {
@@ -57,17 +62,33 @@ body::-webkit-scrollbar-track {
 }
 
 .slideDown {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
-  visibility: hidden;
-}
-
-.slideUp {
   opacity: 1;
   transform: translateY(0px);
   transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
   visibility: visible;
+}
+
+.slideUp {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
+  visibility: hidden;
+}
+
+/* SlideDown2: smoothly appear and slide down */
+.SlideDown2 {
+  opacity: 1;
+  transform: translateY(0); /* Slide down to the normal position */
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* SlideUp2: slide up and fade out */
+.slideUp2 {
+  opacity: 0;
+  transform: translateY(-100%); /* Move up by 100% */
+  /* visibility: hidden; */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .slideRight {
@@ -96,7 +117,7 @@ body::-webkit-scrollbar-track {
 }
 
 .slideFromRight1 {
-  animation: slideFromRight1 0.4s forwards linear;
+  animation: slideFromRight1 0.3s forwards linear;
 }
 
 @keyframes slideFromRight1 {
@@ -177,7 +198,7 @@ body::-webkit-scrollbar-track {
   transition: opacity 0.4s, transform 0.4s;
 }
 
-.animated-componentfromRight.is-visiblefromRight {
+.animated-componentfromRight.is-componentfromRight {
   opacity: 1;
   transform: translateX(0);
 }
@@ -310,4 +331,177 @@ body::-webkit-scrollbar-track {
     transform: scale(1.2);
     opacity: 0;
   }
-} 
+}
+
+.discoverBtn {
+  margin-top: 12px;
+}
+
+.discoverArrow {
+}
+
+.discoverBtn:hover > .discoverArrow {
+  transform: translateX(7px);
+  transition: all 0.3s linear;
+}
+
+.heightDecrease {
+  animation: heightDecrease 0.5s linear forwards;
+}
+
+@keyframes heightDecrease {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+.gro:hover > .groChild {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s linear;
+}
+
+/* Left border animation */
+.animated-border::before,
+.animated-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px; /* Border width */
+  height: 0; /* Initial border height */
+  background-color: #bb9d7b; /* Border color */
+  transition: height 0.5s ease; /* Animation */
+}
+
+/* Position the left border */
+.animated-border::before {
+  left: 0;
+}
+
+/* Position the right border */
+.animated-border::after {
+  right: 0;
+}
+
+/* Hover effect to expand borders */
+.animated-border:hover::before,
+.animated-border:hover::after {
+  height: 100%; /* Expand to full height */
+}
+
+.slope-rectangle1 {
+  clip-path: polygon(0 0%, 100% 0%, 85% 100%, 0 100%);
+}
+
+.slope-rectangle {
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.imgBgForCoolLook {
+  background-image: url("https://darkfashion.wpengine.com/wp-content/uploads/2023/09/blog-bg.jpg");
+}
+
+.imgBgForVideo {
+  background-image: url("https://darkfashion.wpengine.com/wp-content/uploads/2023/09/product-bg.jpg");
+}
+
+.imgBgForFooter {
+  background-image: url("https://darkfashion.wpengine.com/wp-content/uploads/2023/07/home-1-footer-bg.jpg");
+}
+
+.btnParent {
+  position: relative;
+  overflow: hidden;
+}
+
+.btnChild1,
+.btnChild2 {
+  transition: all 0.5s linear;
+}
+
+/* Set initial positions */
+.btnChild1 {
+  left: 0;
+}
+
+.btnChild2 {
+  right: 0;
+}
+
+/* Move elements out on hover */
+.btnParent:hover > .btnChild1 {
+  left: -100%;
+}
+
+.btnParent:hover > .btnChild2 {
+  right: -100%;
+}
+
+.btnParent2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.btnChild12,
+.btnChild22 {
+  transition: all 0.4s linear;
+}
+
+/* Set initial positions */
+.btnChild12 {
+  left: -100%;
+}
+
+.btnChild22 {
+  right: -100%;
+}
+
+/* Move elements out on hover */
+.btnParent2:hover > .btnChild12 {
+  left: -10%;
+}
+
+.btnParent2:hover > .btnChild22 {
+  right: -10%;
+}
+
+.moveUpNDown {
+  animation: moveUpNDown 60s linear infinite;
+}
+
+.moveUpNDown:hover {
+  animation-play-state: paused; /* Pauses the animation on hover */
+}
+
+@keyframes moveUpNDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(100px);
+  }
+  60% {
+    transform: translateY(-100px);
+  }
+}
+.moveLeftNRight {
+  animation: moveLeftNRight 40s linear infinite;
+  transform: rotateY(15deg);
+}
+
+@keyframes moveLeftNRight {
+  0%,
+  100% {
+    transform: translateX(0%) rotate(-90deg); /* Combine translateX and rotate */
+  }
+  30% {
+    transform: translateX(500%) rotate(-90deg); /* Combine translateX and rotate */
+  }
+  70% {
+    transform: translateX(-1100%) rotate(-90deg); /* Combine translateX and rotate */
+  }
+}

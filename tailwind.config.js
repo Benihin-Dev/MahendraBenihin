@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         romansStyle: ["font-romans", "sans-serif"],
         inter: ["Inter"],
+        jost: ["Jost"],
       },
     },
   },

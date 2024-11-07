@@ -15,6 +15,7 @@ import Blog from "../12.Blog/Blog";
 import Footer from "../13.Footer/Footer";
 import WelcomeBanner from "../MiniComponents/WelcomeBanner";
 import MainHeader from "../1.Header/MainHeader";
+import PreLoader from "../MiniComponents/PreLoader";
 
 export default function HomePage() {
   const [searchComponent, setSearchComponent] = useState(false);
@@ -95,6 +96,7 @@ export default function HomePage() {
       {searchComponent && (
         <SearchComponent setSearchComponent={setSearchComponent} />
       )}
+      <PreLoader />
     </div>
   );
 }

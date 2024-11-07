@@ -51,14 +51,21 @@ body::-webkit-scrollbar-track {
   }
 }
 
-.fade {
-  opacity: 0;
-  transition: opacity 600ms linear; /* Smooth transition over 500ms */
+.fadeOut {
+  animation: fadeOut 400ms linear forwards;
 }
 
-.fadein {
-  opacity: 1; /* Fully visible when the class 'show' is added */
-  transition: opacity 600ms linear; /* Smooth transition over 500ms */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .slideDown {
@@ -503,5 +510,30 @@ body::-webkit-scrollbar-track {
   }
   70% {
     transform: translateX(-1100%) rotate(-90deg); /* Combine translateX and rotate */
+  }
+}
+.rotatingAmination {
+  animation: rotatingAmination 4s ease-in-out infinite;
+}
+
+.rotatingAminationReverse {
+  animation: rotatingAminationReverse 4s ease-in-out infinite;
+}
+
+@keyframes rotatingAmination {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes rotatingAminationReverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-720deg);
   }
 }

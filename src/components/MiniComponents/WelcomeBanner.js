@@ -7,7 +7,7 @@ export default function WelcomeBanner() {
   return (
     <>
       {componentState && (
-        <div className=" w-full h-screen z-50 bg-[#000000bd] fixed top-0 left-0">
+        <div className=" w-full h-screen z-[55] bg-[#000000bd] fixed top-0 left-0">
           <div className=" w-full h-full flex items-center justify-center   relative">
             <div className=" relative shadow-md  sm:w-[80%] lg:w-[65%] xl:w-[65%] w-[90%] overflow-y-auto h-[80vh] sm:h-max  customsScrollbar sm:overflow-hidden  grid grid-cols-1 sm:grid-cols-2 bg-white">
               <div className=" w-full p-6 flex items-center">

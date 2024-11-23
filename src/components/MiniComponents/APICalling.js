@@ -69,8 +69,8 @@ export default function APICalling({
     // Initial fetch
     fetchData();
 
-    // const intervalId = setInterval(fetchData, 300);
-    // return () => clearInterval(intervalId);
+    const intervalId = setInterval(fetchData, 30000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const data2 = [

@@ -20,7 +20,7 @@ export default function TempletForMessages({ consoleMessageData }) {
       <div
         ref={containerRef}
         style={{ aspectRatio: "16/13" }}
-        className="customsScrollbar1 relative pl-1 pb-5 w-full space-y-5 bg-[#111525]  aspect-vi deo overflow-auto"
+        className="customsScrollbar1 relative pl-1 pb-5 w-full space-y-3 bg-[#111525]  aspect-vi deo overflow-auto"
       >
         {consoleMessageData.map((message, index) => (
           <Message key={index} message={message} />

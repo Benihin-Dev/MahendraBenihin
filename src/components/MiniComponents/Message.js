@@ -2,17 +2,17 @@ import React from "react";
 
 export default function Message({ message }) {
   const robotExecutionLogs = [
-    "2024-11-23 10:15:42] Robot Execution System Initialized. Diagnostic checks passed. Ready for task execution.",
-    "2024-11-23 10:16:05] Task ID 83729: Navigating to target location (45.7632, -73.5273). Obstacle detection systems active.",
-    "[2024-11-23 10:17:12] Task ID 83729: Minor obstruction detected. Recalculating path. Estimated delay: 5 seconds.",
-    "[2024-11-23 10:18:25] Task ID 83729 completed. Target location reached. Awaiting further instructions.",
-    "2024-11-23 10:20:00] Battery status: 87% remaining. Continuing operations within safe limits.",
-    "[2024-11-23 10:21:15] Task ID 83730: Failed to establish connection with the server. Retrying in 10 seconds.",
-    "2024-11-23 10:22:40] Task ID 83731: Object retrieval initiated. Target identified: Object 4562.",
-    "[2024-11-23 10:23:55] Task ID 83731: Object retrieval completed. Secured object in storage compartment.",
-    "2024-11-23 10:25:30] Robot entering standby mode. No active tasks in the queue.",
-    "[2024-11-23 10:21:15] Task ID 83730: Failed to establish connection with the server. Retrying in 10 seconds.",
-    "2024-11-23 10:26:45] Task ID 83732: Commencing routine maintenance protocol. Inspecting motor functions.",
+    "High Voltage",
+    "High Current",
+    "Vibration X High",
+    "Vibration Y High",
+    "Vibration Z High",
+    "High Temperature",
+    "No Power-Supply to Robot",
+    "Emergency Stopped",
+    "Anomaly Sensor Reading Detected",
+    "Premptive Collision Detection Activated",
+    "Power Supply Falut",
   ];
 
   const consoleTextColors = [
@@ -24,24 +24,32 @@ export default function Message({ message }) {
   ];
   return (
     <div className="w-full flex  mt-4 gap-2 items-start ">
-      <p className="text-gray-300 leading-2">-</p>
-      <p
-        style={{
-          color: `${
-            message >= 8
-              ? "#66E66E"
-              : message >= 6
-              ? "#FF6B6B"
-              : message >= 4
-              ? "#59E3E3"
-              : message >= 2
-              ? "#66E66E"
-              : "#FFD700"
-          }`,
-        }}
-        className={` w-full  leading-5 message `}
-      >
-        {robotExecutionLogs[message] || ""} - {message}
+      <p className="text-gray-300 pt-1 leading-2">-</p>
+      <p className={` px-2 pt-1 w-max  leading-5 message `}>
+        <span className="   text-gray-300">{message.split(": ")[0]} : </span>
+        <span
+          className=" px-2 border border-transparent rounded-sm"
+          style={{
+            color: `${
+              parseInt(message.split(": ")[1], 10) === 10
+                ? "#fff"
+                : parseInt(message.split(": ")[1], 10) === 6
+                ? "#fff"
+                : parseInt(message.split(": ")[1], 10) >= 5
+                ? "#FFD700"
+                : "#FF6B6B"
+            }`,
+            backgroundColor: `${
+              parseInt(message.split(": ")[1], 10) === 10
+                ? "red"
+                : parseInt(message.split(": ")[1], 10) === 6
+                ? "#FF6B6B"
+                : ""
+            }`,
+          }}
+        >
+          {robotExecutionLogs[parseInt(message.split(": ")[1], 10)] || ""}
+        </span>
       </p>
     </div>
   );

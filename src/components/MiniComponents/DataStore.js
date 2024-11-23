@@ -95,10 +95,30 @@ export default function DataStore({
     return result;
   }
 
+  //chane UK time into SL
+  function convertUKToSriLankaTime(ukTime) {
+    // Parse the input UK time
+    const ukDate = new Date(ukTime);
+
+    // Sri Lanka is UTC+5:30; no additional offset if you're satisfied with the input
+    const sriLankaOffsetInMilliseconds = 0;
+
+    // Add the offset to the UK time
+    const sriLankaDate = new Date(
+      ukDate.getTime() + sriLankaOffsetInMilliseconds
+    );
+
+    // Extract and return only the time in 24-hour format (hh:mm:ss)
+    return sriLankaDate.toLocaleTimeString("en-GB"); // 'en-GB' ensures 24-hour format
+  }
+
   // function for set Message data for console
   function processConsole1Data(data) {
     // Map the extracted items into the desired format
-    const result = data.map((item, index) => item.field6); // Get field1 value
+    const result = data.map(
+      (item, index) =>
+        ` [ ${convertUKToSriLankaTime(item.created_at)} ] : ${item.field6}  `
+    ); // Get field1 value
 
     return result;
   }

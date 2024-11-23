@@ -5,7 +5,9 @@ export default function TempletForLineChart({ item }) {
   const timeDurations = ["LIVE", "20m", "40m", "60m"];
   const [selectedTime, setSelectedTime] = useState(0);
   return (
-    <div className=" border-b md:border-b-transparent md:border-x border-[#111525] md:px-3 mx-3 md:mx-0  md:my-3  overflow-hidden ">
+    <div
+      className={` py-5 md:py-0 border-b md:border-b-transparent md:border-x border-[#111525] md:px-3 mx-3 md:mx-0  md:my-3  overflow-hidden `}
+    >
       <div className="cursor-default w-full   font-thin text-[white] flex items-center justify-between p-2">
         <p>{item.attribute}</p>
       </div>

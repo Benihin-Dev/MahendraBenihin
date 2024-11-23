@@ -60,7 +60,7 @@ export default function HomePage({ dataForIndicators, kwh, lineChartData }) {
                 />
               </div>
               <div className=" bg-[#161c31] mt-6 rounded-md  w-full ">
-                <div className=" w-full grid grid-cols-1 md:grid-cols-2   ">
+                <div className=" w-full grid grid-cols-1 md:grid-cols-2    ">
                   {lineChartData.map((item, index) => (
                     <TempletForLineChart key={index} item={item} />
                   ))}

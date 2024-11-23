@@ -95,9 +95,9 @@ export default function HalfCircleProgressBar({
         />
       </svg>
       <div className=" absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <p className=" leading-1 text-sm md:text-xl lg:text-2xl font-thin pb-1 sm:pb-4 text-[#ffffff]">
+        <p className=" leading-1  text-lg md:text-xl lg:text-2xl font-thin pb-1 sm:pb-4 text-[#ffffff]">
           {value}
-          <span className=" text-xs md:text-base lg:text-lg text-gray-300">
+          <span className=" text-sm md:text-base lg:text-lg text-gray-300">
             {type === "Temperature"
               ? "C'"
               : type === "Voltage"
@@ -110,7 +110,7 @@ export default function HalfCircleProgressBar({
           </span>
         </p>
       </div>
-      <div className="  z-20 text-[15px] md:text-xs text-[#726975] cursor-default absolute  top-5 left-0 w-full h-full flex items-center justify-between">
+      <div className="  z-20 text-[10px] sm:text-xs md:text-xs text-[#726975] cursor-default absolute  top-5 left-0 w-full h-full flex items-center justify-between">
         <p className=" pl-1">0</p>
         <p>{maxValue}</p>
       </div>

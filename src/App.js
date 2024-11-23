@@ -1,10 +1,10 @@
 import "./App.css";
-import HomePage from "./components/0.HomePage/HomePage";
+import MainPage from "./components/MainPage/MainPage";
 
 function App() {
   return (
-    <div className="relative ">
-      <HomePage />
+    <div className="relative font-poppins ">
+      <MainPage />
     </div>
   );
 }

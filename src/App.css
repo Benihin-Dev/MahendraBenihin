@@ -16,23 +16,32 @@ body::-webkit-scrollbar-track {
   background-color: #e4e4e4;
 }
 
-*::selection {
-  background-color: #bb9d7bd4; /* Background color for selected text */
-  color: #ffffff; /* Text color for selected text */
-}
-
 .customsScrollbar::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 .customsScrollbar::-webkit-scrollbar-thumb {
-  background-color: #c2c2c27f;
+  background-color: #1f2539;
   border-radius: 0px;
   cursor: pointer;
 }
 
 .customsScrollbar::-webkit-scrollbar-track {
-  background-color: #e4e4e478;
+  background-color: #111525;
+}
+
+.customsScrollbar1::-webkit-scrollbar {
+  width: 5px;
+}
+
+.customsScrollbar1::-webkit-scrollbar-thumb {
+  background-color: #1f2539;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.customsScrollbar1::-webkit-scrollbar-track {
+  background-color: #161c31;
 }
 
 .zoomInOut {
@@ -536,4 +545,79 @@ body::-webkit-scrollbar-track {
   100% {
     transform: rotate(-720deg);
   }
+}
+
+circle {
+  fill: none;
+  stroke-width: 7px;
+}
+
+svg {
+  transform: rotate(180deg);
+}
+
+.element {
+  transition: all 0.4s ease; /* Apply smooth transition */
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.loginPage {
+  animation: login 200ms linear forwards;
+}
+
+@keyframes login {
+  0% {
+    display: block;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.alert {
+  animation: alert 500ms ease-in-out infinite;
+}
+
+@keyframes alert {
+  0%,
+  100% {
+    color: rgb(230, 7, 7);
+  }
+  50% {
+    color: #1f2539;
+  }
+}
+
+.alert2 {
+  animation: alert2 800ms ease-in-out infinite;
+}
+
+@keyframes alert2 {
+  0%,
+  100% {
+    color: rgb(243, 232, 12);
+  }
+  50% {
+    color: rgb(116, 138, 28);
+  }
+}
+
+.homeBlur {
+  filter: blur(5px);
+  box-shadow: 0 0 10px black; /* Creates a black shadow */
+  transition: all 300ms;
+}
+
+*::selection {
+  background-color: #637adb;
 }

@@ -7,6 +7,9 @@ module.exports = {
         romansStyle: ["font-romans", "sans-serif"],
         inter: ["Inter"],
         jost: ["Jost"],
+        montserrat: ["Montserrat"],
+        poppins: ["Poppins"],
+
       },
     },
   },

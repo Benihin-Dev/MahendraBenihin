@@ -84,7 +84,7 @@ export default function LineChart({ chartData, type }) {
                 color: "#1f2539",
               },
               ticks: {
-                stepSize: 10, // Adjust this for better visualization
+                stepSize: 6, // Adjust this for better visualization
                 color: "#726975",
               },
               beginAtZero: false, // Ensure the chart starts from 0

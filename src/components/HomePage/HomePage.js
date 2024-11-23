@@ -6,7 +6,12 @@ import TempletForIndicator from "../MiniComponents/TempletForIndicator";
 import TitleText from "../MiniComponents/TitleText";
 import TempletForMessages from "../MiniComponents/TempletForMessages";
 
-export default function HomePage({ dataForIndicators, kwh, lineChartData }) {
+export default function HomePage({
+  dataForIndicators,
+  kwh,
+  lineChartData,
+  consoleMessageData,
+}) {
   const [loginStatus, setLoginStatus] = useState(true);
 
   return (
@@ -14,6 +19,7 @@ export default function HomePage({ dataForIndicators, kwh, lineChartData }) {
       <div
         className={` ${
           !loginStatus ? "homeBlur" : ""
+          // }   w-full h-screen overflow-auto pb-10 customsScrollbar bg-[#ceccff] sm:px-10 px-3 `}
         }   w-full h-screen overflow-auto pb-10 customsScrollbar bg-[#111525] sm:px-10 px-3 `}
       >
         <div className=" relative">
@@ -82,7 +88,7 @@ export default function HomePage({ dataForIndicators, kwh, lineChartData }) {
                   ></iframe>
                 </div>
               </div>
-              <TempletForMessages />
+              <TempletForMessages consoleMessageData={consoleMessageData} />
             </div>
           </div>
         </div>

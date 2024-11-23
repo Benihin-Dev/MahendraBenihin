@@ -15,7 +15,7 @@ export default function APICalling({
       try {
         // API call using axios
         const response = await axios.get(
-          "https://api.thingspeak.com/channels/2757288/feeds.json?api_key=JE47ASKC5E1OY8W2&results=100"
+          "https://api.thingspeak.com/channels/2757288/feeds.json?api_key=JE47ASKC5E1OY8W2&results=120"
         );
 
         const reversedData = [...response.data.feeds].reverse(); // Create a new reversed array
@@ -69,7 +69,7 @@ export default function APICalling({
     // Initial fetch
     fetchData();
 
-    const intervalId = setInterval(fetchData, 30000);
+    const intervalId = setInterval(fetchData, 5000);
     return () => clearInterval(intervalId);
   }, []);
 

@@ -95,7 +95,7 @@ export default function HalfCircleProgressBar({
         />
       </svg>
       <div className=" absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <p className=" leading-1  text-lg md:text-xl lg:text-2xl font-thin pb-1 sm:pb-4 text-[#ffffff]">
+        <p className=" leading-1 tracking-widest  text-lg md:text-xl lg:text-2xl font-extralight pb-1 sm:pb-4 text-[#ffffff]">
           {value}
           <span className=" text-sm md:text-base lg:text-lg text-gray-300">
             {type === "Temperature"

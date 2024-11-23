@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-export default function DataStore({ data, setLineChartData }) {
+export default function DataStore({
+  data,
+  setLineChartData,
+  setConsoleMessageData,
+}) {
   // function for set Temperature data for line graph
   function processTemperatureData(data, count) {
     // Helper function to calculate averages
@@ -47,6 +51,8 @@ export default function DataStore({ data, setLineChartData }) {
     }
     return result;
   }
+
+  // function for set Vibration data for line graph
   function processVibrationData(data, count) {
     // Helper function to calculate field averages
     function calculateFieldAverages(startIndex, step, array, field) {
@@ -85,6 +91,14 @@ export default function DataStore({ data, setLineChartData }) {
         });
       }
     }
+
+    return result;
+  }
+
+  // function for set Message data for console
+  function processConsole1Data(data) {
+    // Map the extracted items into the desired format
+    const result = data.map((item, index) => item.field6); // Get field1 value
 
     return result;
   }
@@ -136,6 +150,7 @@ export default function DataStore({ data, setLineChartData }) {
             ],
           },
         ]);
+        setConsoleMessageData(processConsole1Data(data));
       } catch (err) {
         console.log(err);
       }
@@ -169,7 +184,14 @@ export default function DataStore({ data, setLineChartData }) {
   }
 
   // Call the function every 30 seconds
-    setInterval(updateThingSpeak, 30000);
+  setInterval(updateThingSpeak, 5000);
 
-  return <div></div>;
+  return (
+    <div
+      // className=" h-20 bg-white w-full"
+      onClick={() => {
+        console.log();
+      }}
+    ></div>
+  );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Message from "./Message";
 
-export default function TempletForMessages() {
+export default function TempletForMessages({ consoleMessageData }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -13,19 +13,21 @@ export default function TempletForMessages() {
     }
   }, []);
   return (
-    <div className="overflow-hidden  rounded-md mt-5  bg-[#161c31] text-[#ffffff] font-thin text-sm w-full ">
-      <p className=" font-light w-fit  cursor-default text-gray-300    px-6 text-sm mt-2 mb-5  ">
+    <div className="overflow-hidden relative  rounded-md mt-5  bg-[#161c31] text-[#ffffff] font-thin text-sm w-full ">
+      <p className=" font-light w-fit  cursor-default text-gray-300    px-6 text-sm mt-2 mb-2  ">
         Execution Log
       </p>
       <div
         ref={containerRef}
-        className="customsScrollbar1 pl-6 pb-5 w-full space-y-5 aspect-video overflow-auto"
+        style={{ aspectRatio: "16/13" }}
+        className="customsScrollbar1 relative pl-1 pb-5 w-full space-y-5 bg-[#111525]  aspect-vi deo overflow-auto"
       >
-        {Array(30)
-          .fill()
-          .map((_, index) => (
-            <Message key={index} message={` jlnk.,m - ${index + 1}`} />
-          ))}
+        {consoleMessageData.map((message, index) => (
+          <Message key={index} message={message} />
+        ))}
+      </div>
+      <div className=" w-full absolute bottom-0 left-0">
+        <div className=" w-20 border-gray-800 mx-auto border-t"></div>
       </div>
     </div>
   );

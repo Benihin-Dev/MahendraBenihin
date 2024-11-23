@@ -24,7 +24,7 @@ export default function TempletForLineChart({ item }) {
                 index === selectedTime
                   ? "bg-[#637adb] text-white"
                   : "bg-[#1f2539] text-gray-400"
-              } w-full cursor-pointer duration-300 pb-1 pt-[6px] rounded hover:bg-[#36436c]  text-center  hover:text-white text-xs `}
+              } w-full cursor-pointer duration-300 pb-[3px] pt-[4px] rounded hover:bg-[#36436c]  text-center  hover:text-white text-xs `}
             >
               {time}
             </p>

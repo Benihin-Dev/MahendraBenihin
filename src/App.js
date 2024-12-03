@@ -1,10 +1,10 @@
 import "./App.css";
-import MainPage from "./components/mainPage/MainPage";
+import HomePage from "./components/homePage/HomePage";
 
 function App() {
   return (
     <div className="relative font-spaceMono ">
-      <MainPage />
+      <HomePage />
     </div>
   );
 }

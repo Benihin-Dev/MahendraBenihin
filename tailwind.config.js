@@ -9,7 +9,8 @@ module.exports = {
         jost: ["Jost"],
         montserrat: ["Montserrat"],
         poppins: ["Poppins"],
-
+        spaceMono: ["Space Mono"],
+        italiana: ["Italiana"],
       },
     },
   },

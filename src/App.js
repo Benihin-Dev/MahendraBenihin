@@ -1,9 +1,9 @@
 import "./App.css";
-import MainPage from "./components/MainPage/MainPage";
+import MainPage from "./components/mainPage/MainPage";
 
 function App() {
   return (
-    <div className="relative font-poppins ">
+    <div className="relative font-spaceMono ">
       <MainPage />
     </div>
   );

@@ -45,6 +45,11 @@ export default function Education() {
     triggerOnce: false,
   });
 
+  const { ref: fourthRef, inView: fourthInView } = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  });
+
   return (
     <div className=" w-full relative bg-[#ff4a3b] py-10 overflow-hidden sm:py-16">
       <div className=" w-full  sm:w-11/12 mx-auto md:w-10/12">
@@ -63,9 +68,9 @@ export default function Education() {
               Scholarly Pursuits: A Chronicle of My Academic Endeavors
             </p>
             <div
-              ref={thirdRef}
+              ref={fourthRef}
               className={`animated-componentfromRight  ${
-                thirdInView ? "is-componentfromRight " : ""
+                fourthInView ? "is-componentfromRight " : ""
               } sm:hidden w-full sm:w-2/5 pb-5  text-sm flex items-center justify-center `}
             >
               <SliderBtn

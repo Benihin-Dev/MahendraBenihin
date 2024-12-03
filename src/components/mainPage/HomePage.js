@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "./navBar/NavBar";
-import About from "./about/About";
-import WhatIDo from "./whatIDo/WhatIDo";
-import Education from "./education/Education";
-import WhatIKnow from "./whatIKnow/WhatIKnow";
-import NonStopSlider from "./nonStopSlider/NonStopSlider";
-import Footer from "./footer/Footer";
-import Projects from "./projects/Projects";
+import NavBar from "./1.NavBar/NavBar";
+import About from "./2.About/About";
+import WhatIDo from "./3.WhatIDo/WhatIDo";
+import Education from "./4.Education/Education";
+import WhatIKnow from "./5.WhatIKnow/WhatIKnow";
+import NonStopSlider from "./7.NonStopSlider/NonStopSlider";
+import Footer from "./9.Footer/Footer";
+import Projects from "./6.Projects/Projects";
 import { Element } from "react-scroll";
-import PersonalInterest from "./personalInterests/PersonalInterest";
+import PersonalInterest from "./8.PersonalInterests/PersonalInterest";
 
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

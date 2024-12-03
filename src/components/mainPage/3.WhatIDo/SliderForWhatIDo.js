@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdArrowRightAlt } from "react-icons/md";
 
 export default function SliderForWhatIDo({
   data,
@@ -11,18 +10,6 @@ export default function SliderForWhatIDo({
 }) {
   const slides = data.map((item) => item);
   const sliderRef = useRef(null);
-
-  //next btn function
-  const handleNextSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickNext();
-  };
-
-  //previous btn function
-  const handlePrevSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickPrev();
-  };
 
   // Test by applying styles directly
   const dotStyles = {

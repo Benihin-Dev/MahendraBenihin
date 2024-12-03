@@ -1,25 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdArrowRightAlt } from "react-icons/md";
 import TempletForProject from "./TempletForProject";
 
 export default function SliderForProject({ data }) {
   const slides = data.map((item) => item);
   const sliderRef = useRef(null);
-
-  //next btn function
-  const handleNextSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickNext();
-  };
-
-  //previous btn function
-  const handlePrevSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickPrev();
-  };
 
   // Test by applying styles directly
   const dotStyles = {
@@ -78,24 +65,6 @@ export default function SliderForProject({ data }) {
           </div>
         ))}
       </Slider>
-
-      {/* <div className=" absolute  w-full bottom-5 md:bottom-[46%] flex items-center justify-center  gap-4 left-0 text-white  ">
-        <div className=" cursor-pointer hover:border-[#bb9d7b]  hover:text-[#bb9d7b]  duration-200 bg-[#000000] rounded-full p-[2px]  border-white border ">
-          <div className=" duration-200 relative " onClick={handlePrevSlide}>
-            <MdArrowRightAlt className=" size-10 rotate-180  duration-200 " />
-            <div className=" absolute size-2 top-[22px] left-2 bg-black"></div>
-          </div>
-        </div>
-        <div className=" cursor-pointer  hover:border-[#bb9d7b]  hover:text-[#bb9d7b]  duration-200 bg-[#000000] rounded-full p-[2px]  border-white border ">
-          <div
-            className=" duration-200 rotate-180 relative "
-            onClick={handleNextSlide}
-          >
-            <MdArrowRightAlt className="size-10 rotate-180  duration-200 " />
-            <div className=" absolute size-2 top-[10px] left-2 bg-black"></div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

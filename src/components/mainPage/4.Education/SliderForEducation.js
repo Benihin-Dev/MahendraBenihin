@@ -19,19 +19,6 @@ export default function SliderForEducation({
     }
   }, [currentIndex]);
 
-  // Custom dot styles
-  const dotStyles = {
-    width: "35px",
-    height: "3px",
-    borderRadius: "5%",
-    backgroundColor: "#a0a0a0",
-  };
-
-  const activeDotStyles = {
-    ...dotStyles,
-    backgroundColor: "#000000",
-  };
-
   return (
     <div className="w-full border border-dashed  md:border-l-transparent border-b-transparent md:border-b-[#1f1f1f] border-[#1f1f1f] h-full relative">
       <Slider

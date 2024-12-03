@@ -129,7 +129,7 @@ export default function WhatIKnow() {
                 transform: `translate(${xMovement * -10}px, ${
                   yMovement * -10
                 }px)`, // Apply inertia movement
-                transition: "transform 0.3s ease-out", // Smooth transition when inertia slows down
+                // transition: "transform 0.3s ease-out", // Smooth transition when inertia slows down
                 transition: "all 0.6s ease-out",
               }}
             >

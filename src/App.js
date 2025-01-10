@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import HomePage from "./components/mainPage/HomePage";
 import LoadingAnimation from "./components/miniComponents/LoadingAnimation";
+import Project from "./components/research/Project";
 
 function App() {
   const [fadeOut, setFadeOut] = useState(false); // State to handle fade-out animation
@@ -24,6 +25,7 @@ function App() {
     <div className="relative font-spaceMono bg-[#1f1f1f]">
       {/* Render LoadingAnimation with fade-out effect */}
       {isLoading ? <LoadingAnimation /> : <HomePage />}
+      {/* <Project /> */}
     </div>
   );
 }

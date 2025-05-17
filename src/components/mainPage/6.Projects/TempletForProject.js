@@ -4,7 +4,7 @@ export default function TempletForProject({ item, i }) {
   return (
     <div className=" w-full relative group">
       <div
-        style={{ aspectRatio: "16/8" }}
+        style={{ aspectRatio: "12/6" }}
         className=" w-full border  border-dashed border-gray-600  overflow-hidden  rounded-lg"
       >
         <img

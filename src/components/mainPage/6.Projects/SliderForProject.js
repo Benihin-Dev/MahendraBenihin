@@ -60,7 +60,7 @@ export default function SliderForProject({ data }) {
         ]}
       >
         {slides.map((item, i) => (
-          <div key={i} className=" w-full px-3 sm:px-5 md:px-10  h-full   ">
+          <div key={i} className=" w-full px-3 sm:px-5 md:px-16  h-full   ">
             <TempletForProject item={item} i={i} />
           </div>
         ))}

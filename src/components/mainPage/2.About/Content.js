@@ -95,7 +95,7 @@ export default function Content() {
             fifthInView ? "is-visiblefromLeft" : ""
           } mt-2 sm:mt-1 pr-1 cursor-pointer  flex justify-end items-center `}
         >
-          <a href="https://drive.google.com/file/d/183vFIVR70KXf6P9IPWwRclr4Rid6xReF/view?usp=sharing">
+          <a href="https://drive.google.com/file/d/1rCA-itmvm722DQ7fWCG-T6_Pmbd3DoPg/view?usp=sharing">
             <button className=" cursor-pointer text-white border rounded-lg duration-300 border-[#2f80ed] hover:bg-[#2f80ed] hover:text-white text-sm pt-[6px] pb-[4px] px-5">
               Download CV
             </button>

@@ -168,13 +168,7 @@ export default function Footer() {
               </form>
             </div>
             <div className="hidden md:flex md:w-[9vw] bg-white"></div>
-            <div className="absolute -left-0 md:-left-20 top-16 sm:top-8 md:top-28 movingAnimation pointer-events-none">
-              <img
-                src="https://html.envalabdemos.com/unded/assets/images/service/arrow-shape.png"
-                alt=""
-                className="size-24 md:size-28 object-contain rotate-[205deg]"
-              />
-            </div>
+             
           </div>
         </div>
         <Link to={"about"} smooth={true} duration={800} spy={true} offset={-20}>

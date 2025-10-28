@@ -82,12 +82,7 @@ export default function Content() {
             fourthInView ? "is-visiblefromLeft" : ""
           } text-jus tify text-[#d2cece]  cursor-default font-medium text-sm `}
         >
-          I am a passionate and innovative undergraduate student at the
-          University of Sri Jayewardenapura, driven by a profound enthusiasm for
-          technology. My goal is to become a proficient professional, leveraging
-          my skills to create impactful solutions. I approach tasks with
-          enthusiasm and welcome the opportunity to collaborate and discuss how
-          my abilities align with your needs.
+         I am a passionate and innovative ICT graduate from the University of Sri Jayewardenepura with a deep enthusiasm for technology and problem-solving. I aim to build a career as a skilled professional who delivers impactful and user-focused digital solutions. I thrive in collaborative environments and approach every challenge with curiosity and commitment.
         </p>
         <div
           ref={fifthRef}

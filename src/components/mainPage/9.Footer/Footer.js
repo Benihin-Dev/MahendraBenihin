@@ -37,7 +37,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { media: "LinkedIn", link: "https://www.linkedin.com/in/benihin-mahendra" },
+    { media: "LinkedIn", link: "https://www.linkedin.com/in/benihin-mahendra-73781b298" },
     { media: "WhatsApp", link: "https://wa.me/0772206069" },
     { media: "Git-Hub", link: "https://github.com/benihin-Dev" },
   ];

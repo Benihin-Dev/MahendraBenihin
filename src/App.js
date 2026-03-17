@@ -4,18 +4,13 @@ import HomePage from "./components/mainPage/HomePage";
 import LoadingAnimation from "./components/miniComponents/LoadingAnimation";
 
 function App() {
-  const [setFadeOut] = useState(false); // State to handle fade-out animation
   const [isLoading, setIsLoading] = useState(true); // State to manage loading phase
 
   useEffect(() => {
-    // Start fade-out after 2 seconds
-    const timer = setTimeout(() => setFadeOut(true), 2000);
-
-    // Stop loading animation after fade-out completes (2.5 seconds total)
+    // Stop loading animation after 2.5 seconds
     const fadeOutTimer = setTimeout(() => setIsLoading(false), 2500);
 
     return () => {
-      clearTimeout(timer);
       clearTimeout(fadeOutTimer);
     };
   }, []);

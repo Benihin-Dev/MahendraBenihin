@@ -47,7 +47,7 @@ export default function WhatIKnow() {
 
   // Handle animation on render event
   const { ref: firstRef, inView: firstInView } = useInView({
-    threshold: 0.2,
+    threshold: 0.2, 
     triggerOnce: false,
   });
 

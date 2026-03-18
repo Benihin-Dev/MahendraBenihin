@@ -2,6 +2,7 @@ import React from "react";
 import linkHubImg from "../../imgs/linkhub.png";
 import snapfolioImg from "../../imgs/snapfolio.png";
 import healthGuradImg from "../../imgs/healthGuard.png";
+import recruitATSImg from "../../imgs/recruitATSImg.png";
 import myraImg from "../../imgs/myra.png";
 import bgImg from "../../imgs/bg.png";
 import ContentForProject from "./ContentForProject";
@@ -10,25 +11,32 @@ import ContentForProject from "./ContentForProject";
 export default function Projects() {
   const details = [
     {
+      img: recruitATSImg,
+      title: "RecruitATS",
+      desc: "RecruitATS is a modern recruitment platform that helps manage job postings and track candidates across hiring stages. Built with Next.js, Prisma, Supabase, and Tailwind CSS, it offers a clean UI with secure authentication via NextAuth.js.",
+      type: "Web Solution",
+      link: "https://recruitats.vercel.app/",
+    },
+    {
       img: linkHubImg,
       title: "LinkHub",
       desc: "LinkHub is a social media ID management platform that enables users to organize and share their profiles effortlessly through a unique, customizable LinkHub ID. Built using the MERN stack, the platform ensures efficiency and user-friendly navigation.",
       type: "Web Solution",
-      link: "",
+      link: "https://linkhub-pi0z.onrender.com/",
     },
     {
       img: snapfolioImg,
       title: "Snapfolio",
       desc: "Snapfolio is a web-based solution built with the MERN stack, enabling users to create personalized portfolios by selecting a template and providing details such as their About section, education, skills, and projects. After submission, users receive a portfolio link featuring a consistent structure with customizable color themes.",
       type: "Web Solution",
-      link: "",
+      link: "https://snap-folio.vercel.app/",
     },
     {
       img: myraImg,
       title: "MyRa",
       desc: "MyRa is a school bus tracking system developed using GPS, GSM modules, and an Arduino board. The system is deployed on school buses to capture real-time coordinates, which are sent to parents or guardians at regular intervals (e.g., 10 or 20 minutes). Using these coordinates, parents can conveniently track their child's current location.",
       type: "Digital Components",
-      link: false,
+      link: "https://www.linkedin.com/in/benihin-mahendra-73781b298/details/projects/375380744/multiple-media-viewer?profileId=ACoAAEgGP1sBJfhQ5dWzBTSxGlJnv10mJbVgncs&treasuryMediaId=1761311972749&type=DOCUMENT&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3B%2FPYLgSCuQla3GiKvX51HfQ%3D%3D",
     },
     {
       img: healthGuradImg,
@@ -42,7 +50,7 @@ export default function Projects() {
       title: "Real-time Phishing Attack Detection",
       desc: "This is an ongoing project focused on real-time phishing attack detection using AI and ML techniques. The system analyzes URLs and HTML content to identify potential phishing threats and enhance online security.",
       type: "Web Solution",
-      link: false,
+      link: "https://phishguardai.vercel.app/",
     },
   ];
   return (

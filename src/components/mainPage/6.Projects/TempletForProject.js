@@ -31,14 +31,16 @@ export default function TempletForProject({ item, i }) {
           {item.desc}
         </p>
         <div className=" flex items-center justify-end">
-          <button
-            className="  w-fit px-5 py-1 text-xs mt-3 cursor-pointer  hover:scale-105 duration-200"
-            style={{
-              background: "linear-gradient(to right, #2f2fb6, #f56659)",
-            }}
-          >
-            Explore More
-          </button>
+         <a href={item.link} target="_blank" rel="noopener noreferrer">
+  <button
+    className="w-fit px-5 py-1 text-xs mt-3 cursor-pointer hover:scale-105 duration-200"
+    style={{
+      background: "linear-gradient(to right, #2f2fb6, #f56659)",
+    }}
+  >
+    Explore More
+  </button>
+</a>
         </div>
       </div>
     </div>

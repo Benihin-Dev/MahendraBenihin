@@ -46,7 +46,7 @@ export default function Projects() {
       link: false,
     },
     {
-      img: "https://securuscomms.co.uk/wp-content/uploads/2021/05/Phishing-Attacks-That-Can-Impact-Your-Business-image.jpg",
+      img: "https://wso2.com/sites/default/files/GLOBAL_Choreo_AI_Driven_Phishing_Detection_in_Choreo_Banner_Oct26.png",
       title: "Real-time Phishing Attack Detection",
       desc: "This is an ongoing project focused on real-time phishing attack detection using AI and ML techniques. The system analyzes URLs and HTML content to identify potential phishing threats and enhance online security.",
       type: "Web Solution",

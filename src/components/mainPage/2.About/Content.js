@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import profileImg from "../../imgs/profilePic.png";
+import profileImg1 from "../../imgs/profilePic1.png";
 import { useInView } from "react-intersection-observer";
 
 export default function Content() {
@@ -104,7 +105,7 @@ export default function Content() {
         } w-full md:w-2/5 pointer-events-none h-fit md:block hidden relative `}
       >
         <img
-          src={profileImg}
+          src={profileImg1}
           alt="profilePic"
           className="  object-contain  md:w-[70%] ml-auto md:mx-auto"
         />

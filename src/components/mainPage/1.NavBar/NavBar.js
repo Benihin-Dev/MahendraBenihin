@@ -61,7 +61,7 @@ export default function NavBar() {
   return (
     <div
       className={`${
-        scrollDirectionUp ? "navBarSlideUp" : "navBarSlideDown"
+        scrollDirectionUp ? "navBarSlideDown" : "navBarSlideUp"
       } fixed top-0 left-0 w-full z-40  bg-[#1f1f1fef] `}
     >
       <div className=" w-full px-5 sm:px-0 sm:w-11/12 md:w-10/12 mx-auto pt-5 pb-3  flex items-center justify-between gap-5">

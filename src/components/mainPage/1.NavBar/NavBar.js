@@ -31,32 +31,34 @@ export default function NavBar() {
   // Variable to track the previous scroll position
 
   // Track page scroll direction
-  useEffect(() => {
-    let lastScrollY = 0;
+ const [scrollDirectionUp, setScrollDirectionUp] = useState(true); // visible on load
 
-    const trackDirection = () => {
-      const currentScrollY = window.scrollY;
+useEffect(() => {
+  let lastScrollY = 0;
 
-      if (currentScrollY === 0) {
-        // If the page is at the top, set scroll direction to down
-        setScrollDirectionUp(false);
-      } else if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setScrollDirectionUp(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up
-        setScrollDirectionUp(true);
-      }
+  const trackDirection = () => {
+    const currentScrollY = window.scrollY;
 
-      lastScrollY = currentScrollY;
-    };
+    if (currentScrollY === 0) {
+      // Keep it visible at the top of the page
+      setScrollDirectionUp(true);
+    } else if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      setScrollDirectionUp(false);
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up
+      setScrollDirectionUp(true);
+    }
 
-    window.addEventListener("scroll", trackDirection);
+    lastScrollY = currentScrollY;
+  };
 
-    return () => {
-      window.removeEventListener("scroll", trackDirection);
-    };
-  }, []);
+  window.addEventListener("scroll", trackDirection);
+
+  return () => {
+    window.removeEventListener("scroll", trackDirection);
+  };
+}, []);
 
   return (
     <div

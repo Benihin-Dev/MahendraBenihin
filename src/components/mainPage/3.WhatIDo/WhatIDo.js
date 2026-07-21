@@ -53,7 +53,7 @@ export default function WhatIDo() {
       icon: <FaReact className=" size-full text-[#08daff7c]" />,
     },
     {
-      img: "https://dm1wsvzj3kcu0.cloudfront.net/wp-content/uploads/2023/06/Node-JS-Feature-Image.jpg",
+      img: "https://www.miquido.com/wp-content/uploads/2021/04/header-what-is-backend-development-1.jpg",
       title: "Back-End Development",
       subtitle: "Building Server-Side Logic",
       desc: "Developing robust server-side logic, APIs, and databases using Node.js, Express, and MongoDB to ensure seamless communication with front-end systems.",
@@ -67,7 +67,7 @@ export default function WhatIDo() {
       icon: <TbAdjustmentsCode className=" size-full text-[#1f37bf60]" />,
     },
     {
-      img: "https://www.dexterstudio.lk/wp-content/uploads/2024/04/01-1024x836.jpg",
+      img: "https://img.magnific.com/free-photo/web-design-technology-browsing-programming-concept_53876-163260.jpg",
       title: "Web Designing",
       subtitle: "Creating Aesthetic Web Interfaces",
       desc: "Designing visually appealing web layouts with tools like Figma, Adobe XD, and implementing them using CSS, Bootstrap, and modern design principles.",

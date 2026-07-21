@@ -27,12 +27,10 @@ export default function NavBar() {
   const [stateForNavLinks, setStateForNavLinks] = useState(false);
   const [stateForInfo, setStateForInfo] = useState(false);
 
-  const [scrollDirectionUp, setScrollDirectionUp] = useState(false);
+  const [scrollDirectionUp, setScrollDirectionUp] = useState(true);
   // Variable to track the previous scroll position
 
   // Track page scroll direction
- const [scrollDirectionUp, setScrollDirectionUp] = useState(true); // visible on load
-
 useEffect(() => {
   let lastScrollY = 0;
 
